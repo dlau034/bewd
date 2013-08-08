@@ -1,4 +1,12 @@
 GamesOnRails::Application.routes.draw do
+
+  get "games", to: "games#index" 
+  get "games/magic-eight-ball", to: "games#magic_eight_ball" , as: 'magic_eight_ball'
+  get "games/magic-eight-ball/:question", to: "games#magic_eight_ball_question"
+
+
+  get "games/secret-number/", to: "games#secret_number" , as: 'secret_number'
+  get "games/secret-number/:guess", to: "games#secret_number_guess" , as: 'secret_number_guess'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

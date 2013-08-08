@@ -1,0 +1,10 @@
+<h1>Games on Rails!</h1>
+
+<ol>
+	<% @games.each do |game_name, path| %>
+		<li> <%= link_to game_name, path %> </li>
+	<% end %>	
+</ol>
+
+
+
