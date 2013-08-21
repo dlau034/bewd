@@ -1,0 +1,13 @@
+<h1>Edit</h1>
+
+<p>
+  <%= button_to 'Delete', {action: 'destroy', id: @shirt.id},method: 'delete' %>
+</p>
+
+<% if flash[:alert].present? %>
+  <p class="errors">
+    <%= flash[:alert] %>
+  </p>
+<% end %>
+
+<%= render partial: 'form' %>

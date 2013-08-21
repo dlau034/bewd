@@ -1,0 +1,9 @@
+<h1>Create a New Shirt</h1>
+
+<% if flash[:alert].present? %>
+  <p class="errors">
+    <%= flash[:alert] %>
+  </p>
+<% end %>
+
+<%= render partial: 'form' %>

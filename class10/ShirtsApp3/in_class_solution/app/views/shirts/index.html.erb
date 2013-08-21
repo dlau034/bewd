@@ -1,0 +1,13 @@
+<h1>All the Shirts</h1>
+
+<div>
+  <%= link_to 'New Shirt', new_shirt_path %>
+</div>
+
+<%= form_tag shirts_search_path, method: :get do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= render partial: 'shirts_list' %>

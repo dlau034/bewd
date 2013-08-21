@@ -1,0 +1,18 @@
+<h1>This is the page that is going to tell me when i WIN or LOSE</h1>
+
+<p>
+	My Hand: <%= @input %>	
+</p>
+
+<p>
+	Opposition's Hand: <%= @opp %>	
+</p>
+
+
+
+
+<% if @match_throw %>
+	<p>You win</p>
+<% else %>
+	<p>You lose</p>
+<% end %>

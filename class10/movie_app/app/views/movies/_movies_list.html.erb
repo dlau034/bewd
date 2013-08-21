@@ -1,0 +1,21 @@
+<ol>
+	<% @movies.each do |film| %>
+	  <li>
+	  	<%= link_to movie_path(film) do %>
+	      <p>
+	        <%= film.title %> 
+	        <!-- Diplays movie name -->
+	      </p>
+	    <% end %>
+	      <p>
+	        <%= film.description %> 
+	        <!-- Diplays movie description -->
+	      </p>	    	    
+	  </li>
+	<% end %>
+</ol>
+
+
+
+
+

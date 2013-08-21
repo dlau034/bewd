@@ -1,0 +1,13 @@
+<h2>This is the edit page</h2>
+
+<p>
+  <%= button_to 'Delete Movie', {action: 'destroy', id: @movie.id},method: 'delete' %>
+</p>
+
+<% if flash[:alert].present? %>
+  <p class="errors">
+    <%= flash[:alert] %>
+  </p>
+<% end %>
+
+<%= render partial: 'form' %>

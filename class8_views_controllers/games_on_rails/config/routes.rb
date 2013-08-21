@@ -7,6 +7,13 @@ GamesOnRails::Application.routes.draw do
 
   get "games/secret-number/", to: "games#secret_number" , as: 'secret_number'
   get "games/secret-number/:guess", to: "games#secret_number_guess" , as: 'secret_number_guess'
+
+
+  get "games/rps_game/", to: "games#rps_game" , as: 'rps_game'
+
+
+  get "games/rps_game/:input", to: "games#rps_game_table" , as: 'rps_game_table'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

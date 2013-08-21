@@ -1,0 +1,17 @@
+<ol>
+<% @shirts.each do |shirt| %>
+  <li>
+    <%= link_to shirt_path(shirt) do %>
+      <p>
+        <%= shirt.name %>
+      </p>
+      <p>
+        <%= shirt.description %>
+      </p>
+      <p>
+        <%#= image_tag 'https://www.google.com/images/srpr/logo4w.png', height: 100 %>
+      </p>
+    <% end %>
+  </li>
+<% end %>
+</ol>

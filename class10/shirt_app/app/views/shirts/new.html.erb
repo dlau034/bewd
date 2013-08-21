@@ -1,0 +1,26 @@
+<h1>New Shirt</h1>
+
+<% if flash[:alert].present? %>
+	<p style="color:red;">
+		<%= flash[:alert] %>
+	</p>
+<% end %>
+
+<% render partial: 'form' %>
+
+<%= form_for @shirt do |f| %>
+
+	<div>
+		<%= f.label :name  %>
+		<%= f.text_field :name  %>
+	</div>
+	<div>
+		<%= f.label :description  %>
+		<%= f.text_area :description  %>
+	</div>
+
+	<div>
+		<%= f.submit 'Create' %>
+	</div>
+
+<% end %>

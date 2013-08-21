@@ -1,0 +1,44 @@
+<h2>Welcome to RetFlix!</h2>
+
+<%= form_for @movie do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>  
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h3>All Movies List</h3>
+
+<%= form_tag movies_search_path, method: :get do %>
+  <%= label_tag(:batman, "Search for:") %>
+  <%= text_field_tag(:batman) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<ol>
+	<% @movies.each do |film| %>
+	  <li>
+	  	<%= link_to movie_path(film) do %>
+	      <p>
+	        <%= film.title %> <!-- Diplays movie name -->
+	      </p>
+	    <% end %>
+	      <p>
+	        <%= film.description %> <!-- Diplays movie description -->
+	      </p>	    	    
+	  </li>
+	<% end %>
+</ol>
+
+
+
+
+
