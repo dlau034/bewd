@@ -1,0 +1,10 @@
+<h2>Enter your Url into the Textbox</h2>
+
+<%= form_for @url do |f| %>
+  
+  <p>Enter your link in below with http://</p>
+	<%= f.text_field :link %>
+
+  <%= f.submit %>
+<% end %>
+

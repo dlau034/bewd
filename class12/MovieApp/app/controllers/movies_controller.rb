@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   before_action :find_movie, only: [:update, :edit, :show]
+  before_filter :authenticate_user!, only: [:edit]
+
   def index
     @movies = Movie.all
   end
@@ -22,12 +24,22 @@ class MoviesController < ApplicationController
   end
 
   def update
-    safe_movie = params.require(:movie).permit(:title, :description, :year_released, :rating)
-    if @movie.update(safe_movie)
+
+    safe_movie = params.require(:movie).permit(:title, :description, :year_released, :ratings)
+
+    if movie.user_id == current_user.id 
+      @movie.update(safe_movie)
       redirect_to @movie
-    else
+    else 
       render 'edit'
-    end
+    end 
+    
+    # if @movie.update(safe_movie)
+    #   redirect_to @movie
+    # else
+    #   render 'edit'
+    # end
+  
   end
 
   def show
@@ -43,4 +55,5 @@ class MoviesController < ApplicationController
   def find_movie
     @movie = Movie.find params[:id]
   end
+
 end
