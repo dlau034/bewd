@@ -1,0 +1,10 @@
+<h1>Bicycle Edit</h1>
+
+<%= form_for @bicycle_order do |f|%>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<%= f.submit %>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828233852) do
+ActiveRecord::Schema.define(version: 20130829002046) do
 
   create_table "bicycle_orders", force: true do |t|
     t.string  "name"
@@ -19,5 +19,9 @@ ActiveRecord::Schema.define(version: 20130828233852) do
   end
 
   add_index "bicycle_orders", ["wheels_id"], name: "index_bicycle_orders_on_wheels_id"
+
+  create_table "wheel_sets", force: true do |t|
+    t.string "name"
+  end
 
 end

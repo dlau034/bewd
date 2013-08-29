@@ -1,0 +1,10 @@
+<h1>Bicycle Orders</h1>
+
+<%= form_for @bicycle do |f|%>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<%= f.submit %>
+<% end %>
