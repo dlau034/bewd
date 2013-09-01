@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CafeApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div class="header">
+	<div class="container">
+		<%= link_to "Food Order App", food_orders_path %>
+	</div>
+</div>
+
+<div class="container">
+<%= yield %>
+</div>		
+
+</body>
+</html>

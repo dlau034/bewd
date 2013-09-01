@@ -4206,3 +4206,88 @@ ActionController::RoutingError (No route matches [GET] "/movies"):
   Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (47.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-01 12:56:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 28ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/r" for 127.0.0.1 at 2013-09-01 12:56:52 -0400
+
+ActionController::RoutingError (No route matches [GET] "/r"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.5ms)
+
+
+Started GET "/shirts/new" for 127.0.0.1 at 2013-09-01 12:57:02 -0400
+Processing by ShirtsController#new as HTML
+  Rendered shirts/_form.html.erb (42.1ms)
+  Rendered shirts/new.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 74ms (Views: 70.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-01 12:57:02 -0400
+
+
+Started POST "/shirts" for 127.0.0.1 at 2013-09-01 12:57:08 -0400
+Processing by ShirtsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OChOIwz3Ivnvbniqy5D+I6rg4o3i+3dFImUwr8A6Hwc=", "shirt"=>{"name"=>"david ", "description"=>"cool shirt"}, "commit"=>"Create Shirt"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "shirts" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 01 Sep 2013 16:57:08 UTC +00:00], ["description", "cool shirt"], ["name", "david "], ["updated_at", Sun, 01 Sep 2013 16:57:08 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/shirts
+Completed 302 Found in 7ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/shirts" for 127.0.0.1 at 2013-09-01 12:57:08 -0400
+Processing by ShirtsController#index as HTML
+  [1m[36mShirt Load (0.3ms)[0m  [1mSELECT "shirts".* FROM "shirts"[0m
+  Rendered shirts/_shirts_list.html.erb (3.7ms)
+  Rendered shirts/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shirts/3" for 127.0.0.1 at 2013-09-01 12:57:10 -0400
+Processing by ShirtsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mShirt Load (0.3ms)[0m  SELECT "shirts".* FROM "shirts" WHERE "shirts"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered shirts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shirts/3/edit" for 127.0.0.1 at 2013-09-01 12:57:11 -0400
+Processing by ShirtsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShirt Load (0.1ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE "shirts"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered shirts/_form.html.erb (3.1ms)
+  Rendered shirts/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.1ms)

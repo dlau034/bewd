@@ -1,0 +1,18 @@
+<h2>Welcome to Food Order App</h2>
+
+<h4>This is the Menu to choose from:</h4>
+<% @food_items.each do |i| %>
+  <ul class="menu">
+    <li><%= i.name %></li>
+  </ul>
+<% end %>
+
+
+<h4>These are the orders:</h4>
+<% @food_orders.each do |f| %>
+  <div class="module">
+    <p><%= link_to f.name, edit_food_order_path(f.id) %></p> 
+    <p><%= f.name %></p>
+  </div>
+<% end %>
+

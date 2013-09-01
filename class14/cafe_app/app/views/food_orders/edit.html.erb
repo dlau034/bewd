@@ -1,0 +1,20 @@
+<h1>This is the edit page for the food Orders</h1>
+
+<%= form_for @food_order do |f|%>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div>
+		<%= f.label :food_item_id %>
+		<%= f.select :food_item_id, @food_items.map {|f| [f.name, f.id] }, include_blank: 'Nothing' %>
+	</div>		
+
+	<%= f.submit %>
+
+<% end %>
+
+<p>
+  <%= button_to 'Delete', {action: 'destroy', id: @food_order.id},method: 'delete' %>
+</p>

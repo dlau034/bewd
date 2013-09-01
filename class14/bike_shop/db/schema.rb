@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130829002046) do
+ActiveRecord::Schema.define(version: 20130829002913) do
 
   create_table "bicycle_orders", force: true do |t|
     t.string  "name"
-    t.integer "wheels_id"
+    t.integer "wheel_set_id"
   end
 
-  add_index "bicycle_orders", ["wheels_id"], name: "index_bicycle_orders_on_wheels_id"
+  add_index "bicycle_orders", ["wheel_set_id"], name: "index_bicycle_orders_on_wheel_set_id"
 
   create_table "wheel_sets", force: true do |t|
     t.string "name"
