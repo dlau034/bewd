@@ -188,23 +188,22 @@ WheelSet.create([
 	  </div>
 	<% end %>	
 	
-
-
 	<% @food_items.each do |i| %>
 	  <ul class="menu">
 	    <li><%= i.name %></li>
 	  </ul>
 	<% end %> 		
 	
-20. def index # Which ever page you want to display all your FoodOrders & FoodItems
+21. def index # Which ever page you want to display all your FoodOrders & FoodItems
 		@food_orders = FoodOrder.all
 		@food_items = FoodItem.all
 	end
 
+22. CHECK if links display correctly
 
-19. Add in delete feature
+23. Add in delete feature
 
-20. Create the delete button in edit.html.erb # where ever you want your delete button to be
+24. Create the delete button in edit.html.erb # where ever you want your delete button to be
 
 	# So that you get an error saying destroy isn't defined in controller
 
@@ -212,7 +211,7 @@ WheelSet.create([
 	  <%= button_to 'Delete', {action: 'destroy', id: @food_order.id},method: 'delete' %>
 	</p>	
 
-21. def destroy 
+25. def destroy 
 		food_order = FoodOrder.find(params[:id])
 		# grab the instance of FoodOrder via is and assign as local variable for food_order
     	food_order.destroy
@@ -221,5 +220,9 @@ WheelSet.create([
     	# redirect to the food_orders_path which is the index page
 	end
 
-22. Test it out
+26. Test it out see if destry works?
+
+# ------------------------------------------------------------------------
+
+# implementation of devise loging
 

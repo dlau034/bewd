@@ -12,7 +12,9 @@
 <% @food_orders.each do |f| %>
   <div class="module">
     <p><%= link_to f.name, edit_food_order_path(f.id) %></p> 
-    <p><%= f.name %></p>
+    
+    <p><%= f.food_item.name %></p> 
+    <p><%= @food_items.name %></p> 
   </div>
 <% end %>
 

@@ -1,4 +1,6 @@
 class FoodOrdersController < ApplicationController
+	before_filter :authenticate_admin!, :except => [:index]
+
 	def new
 		@food_order = FoodOrder.new
 	end	
