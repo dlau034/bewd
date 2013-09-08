@@ -1,0 +1,23 @@
+<h1>Bicycle Orders</h1>
+
+<% if current_user %>
+	<p>Logout</p>
+<% else %>
+	<p><%= link_to 'Log in with Twitter', '/auth/twitter' %></p>
+<% end %>
+
+<p><%= link_to 'New Bicycle Order', new_bicycle_order_path %></p>
+
+<% if current_user %>
+
+<ol>
+<% @bicycle_orders.each do |bicycle_order| %>
+  <li>
+    <p><%= link_to bicycle_order.name, edit_bicycle_order_path(bicycle_order) %></p>
+  </li>
+<% end %>
+</ol>
+
+<% else %>
+	<p>Please log in to view orders</p>
+<% end %>

@@ -1,4 +1,10 @@
 class BicycleOrdersController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
+  def index
+    @bicycle_orders = BicycleOrder.all
+  end
+  
   def new
     @bicycle_order = BicycleOrder.new
   end
@@ -27,12 +33,6 @@ class BicycleOrdersController < ApplicationController
       redirect_to new_bicycle_order_path
     end
   end
-
-  def index 
-    @bicycle_orders = BicycleOrder.all
-    @wheel_sets = WheelSet.all
-  end
-
 
   def bicycle_order_params
     params.require('bicycle_order').permit('name', 'wheel_set_id')
